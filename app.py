@@ -21,7 +21,7 @@ from flask import (
     url_for,
 )
 from db import Database, init_schema, integrity_error_types, persistent_data, using_postgres
-from placa import placa_pdf_bytes, placa_png_bytes
+from placa import SIDE_PX, placa_pdf_bytes, placa_png_bytes
 from qrcode.constants import ERROR_CORRECT_M
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -617,7 +617,7 @@ def placa_png(code: str):
         width = 480 if preview else None
         if request.args.get("w"):
             try:
-                width = max(120, min(1258, int(request.args.get("w"))))
+                width = max(120, min(SIDE_PX, int(request.args.get("w"))))
             except ValueError:
                 width = 480 if preview else None
         fmt = "JPEG" if preview else "PNG"
