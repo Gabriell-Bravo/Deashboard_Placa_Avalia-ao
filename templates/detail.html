@@ -7,8 +7,7 @@
     <h1><span class="code-pill lg">{{ item.code }}</span></h1>
   </div>
   <div class="head-actions">
-    <a class="btn btn-primary" href="{{ url_for('placa_pdf', code=item.code) }}">Baixar plaquinha PDF</a>
-    <a class="btn btn-secondary" href="{{ url_for('placa_png', code=item.code, download=1) }}">Baixar PNG</a>
+    <a class="btn btn-primary" href="{{ url_for('placa_png', code=item.code, download=1) }}" download>Baixar plaquinha</a>
     {% if not item.sold %}
     <button
       type="button"
@@ -47,8 +46,7 @@
       <code>{{ public_url }}</code>
     </div>
     <div class="form-actions" style="justify-content:stretch;margin-top:0.9rem;">
-      <a class="btn btn-primary btn-block" href="{{ url_for('placa_pdf', code=item.code) }}">Baixar plaquinha (PDF)</a>
-      <a class="btn btn-secondary btn-block" href="{{ url_for('placa_png', code=item.code, download=1) }}">Baixar imagem (PNG)</a>
+      <a class="btn btn-primary btn-block" href="{{ url_for('placa_png', code=item.code, download=1) }}" download>Baixar imagem (PNG)</a>
     </div>
   </div>
 

@@ -13,7 +13,6 @@
     const loaderEl = document.getElementById("qrModalLoader");
     const urlEl = document.getElementById("qrModalUrl");
     const downloadEl = document.getElementById("qrModalDownload");
-    const pngEl = document.getElementById("qrModalPng");
 
     function showLoader(show) {
       if (loaderEl) {
@@ -28,7 +27,6 @@
       codeEl.textContent = btn.dataset.code || "";
       urlEl.textContent = btn.dataset.public || "";
       downloadEl.href = btn.dataset.download || "#";
-      if (pngEl) pngEl.href = btn.dataset.png || "#";
 
       const url = btn.dataset.img || "";
       showLoader(true);
@@ -39,7 +37,7 @@
         showLoader(true);
         if (loaderEl) {
           loaderEl.style.display = "grid";
-          loaderEl.textContent = "Falha ao carregar preview. Tente Baixar PDF/PNG.";
+          loaderEl.textContent = "Falha ao carregar preview. Tente baixar a imagem.";
         }
         imgEl.hidden = true;
       };

@@ -106,8 +106,7 @@
         data-code="{{ item.code }}"
         data-name="{{ item.name }}"
         data-img="{{ url_for('placa_png', code=item.code, preview=1, w=480) }}"
-        data-download="{{ url_for('placa_pdf', code=item.code) }}"
-        data-png="{{ url_for('placa_png', code=item.code, download=1) }}"
+        data-download="{{ url_for('placa_png', code=item.code, download=1) }}"
         data-public="{{ base_url }}/r/{{ item.code }}"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -156,8 +155,7 @@
     </div>
     <p class="tiny muted" id="qrModalUrl"></p>
     <div class="qr-modal-actions">
-      <a class="btn btn-primary" id="qrModalDownload" href="#">Baixar PDF</a>
-      <a class="btn btn-secondary" id="qrModalPng" href="#">Baixar PNG</a>
+      <a class="btn btn-primary" id="qrModalDownload" href="#" download>Baixar imagem</a>
       <button class="btn btn-ghost" type="button" data-close-qr>Fechar</button>
     </div>
   </div>
